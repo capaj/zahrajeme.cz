@@ -10,7 +10,7 @@ describe('Home route', function () {
       Home = Home.default
       const wrapper = render(<Home />)
       // console.log(wrapper.html())
-      return expect(wrapper.text()).to.contain('Home route')
+      return expect(wrapper.text()).to.contain('Mapa událostí')
     })
   })
 })

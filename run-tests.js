@@ -12,18 +12,17 @@ const glob = require('glob')
 const jsdom = require('jsdom')
 const mocha = new Mocha()
 
-const doc = jsdom.jsdom('<!doctype html><html><body></body></html>')
+const doc = jsdom.jsdom('<!doctype html><html><body><script></script></body></html>')
 const win = doc.defaultView
 global.document = doc
 global.window = win
 
-// take all properties of the window object and also attach it to the
-// mocha global object
 propagateToGlobal(win)
 
 // from mocha-jsdom https://github.com/rstacruz/mocha-jsdom/blob/master/index.js#L80
 function propagateToGlobal (window) {
   for (let key in window) {
+    // console.log(key)
     if (!window.hasOwnProperty(key)) continue
     if (key in global) continue
 

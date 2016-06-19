@@ -6,8 +6,8 @@ export default class Home extends React.Component {
     return <div>
       <Profile />
       <h2 className='title'>Mapa událostí</h2>
-        <span className="icon">
-        <i className="fa fa-home"></i>
+      <span className='icon'>
+        <i className='fa fa-home'></i>
       </span>
     </div>
   }
