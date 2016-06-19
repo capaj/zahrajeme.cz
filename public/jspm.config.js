@@ -3,7 +3,7 @@ SystemJS.config({
         "map": {
             "babel-plugin-transform-react-jsx": "npm:babel-plugin-transform-react-jsx@6.8.0",
             "core-js": "npm:core-js@2.4.0",
-            "plugin-babel": "npm:systemjs-plugin-babel@0.0.10"
+            "plugin-babel": "npm:systemjs-plugin-babel@0.0.12"
         },
         "packages": {
             "npm:babel-code-frame@6.8.0": {
@@ -124,6 +124,9 @@ SystemJS.config({
             ],
             "cjsDeferDepsExecute": true
         }
+    },
+    map: {
+        "css": "github:systemjs/plugin-css@0.1.23"
     }
 });
 
@@ -141,9 +144,9 @@ SystemJS.config({
         "child_process": "github:jspm/nodelibs-child_process@0.2.0-alpha",
         "constants": "github:jspm/nodelibs-constants@0.2.0-alpha",
         "crypto": "github:jspm/nodelibs-crypto@0.2.0-alpha",
-        "css": "github:systemjs/plugin-css@0.1.23",
         "domain": "github:jspm/nodelibs-domain@0.2.0-alpha",
         "events": "github:jspm/nodelibs-events@0.2.0-alpha",
+        "font-awesome": "npm:font-awesome@4.6.3",
         "fs": "github:jspm/nodelibs-fs@0.2.0-alpha",
         "http": "github:jspm/nodelibs-http@0.2.0-alpha",
         "https": "github:jspm/nodelibs-https@0.2.0-alpha",
@@ -158,7 +161,7 @@ SystemJS.config({
         "react-router": "npm:react-router@2.4.1",
         "stream": "github:jspm/nodelibs-stream@0.2.0-alpha",
         "string_decoder": "github:jspm/nodelibs-string_decoder@0.2.0-alpha",
-        "systemjs-plugin-babel": "npm:systemjs-plugin-babel@0.0.10",
+        "systemjs-plugin-babel": "npm:systemjs-plugin-babel@0.0.12",
         "tty": "github:jspm/nodelibs-tty@0.2.0-alpha",
         "url": "github:jspm/nodelibs-url@0.2.0-alpha",
         "util": "github:jspm/nodelibs-util@0.2.0-alpha",
@@ -545,6 +548,11 @@ SystemJS.config({
                 "bn.js": "npm:bn.js@4.11.4",
                 "inherits": "npm:inherits@2.0.1",
                 "minimalistic-assert": "npm:minimalistic-assert@1.0.0"
+            }
+        },
+        "npm:font-awesome@4.6.3": {
+            "map": {
+                "css": "github:systemjs/plugin-css@0.1.23"
             }
         }
     }

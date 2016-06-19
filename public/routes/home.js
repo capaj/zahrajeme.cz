@@ -5,8 +5,10 @@ export default class Home extends React.Component {
   render () {
     return <div>
       <Profile />
-      <p>you can try editing it as you like to test this out</p>
-
+      <h2 className='title'>Mapa událostí</h2>
+        <span className="icon">
+        <i className="fa fa-home"></i>
+      </span>
     </div>
   }
 }
