@@ -7,27 +7,26 @@ export const profile = observable({
   name: null
 })
 
-const loginCB = function (response) {
-  if (response.status === 'connected') {
-    // Logged in
-    profile.authResponse = response.authResponse  // saving into the store
-
-    FB.api('/me?fields=id,name,picture', function (response) {
-      Object.assign(profile, response)
-      console.log(response)
-    })
-  } else if (response.status === 'not_authorized') {
-    // The person is logged into Facebook, but not this app
-
-  } else {
-    // The person is not logged into Facebook, so we're not sure if
-    // they are logged into this app or not.
-
-  }
-}
-
 export const login = function () {
-  FB.login(loginCB, {scope: 'public_profile,email'})
+  return new Promise((resolve, reject) => {
+    FB.login(function (response) {
+      if (response.status === 'connected') {
+        // Logged in
+        resolve(response.authResponse)
+
+        FB.api('/me?fields=id,name,picture', function (response) {
+          Object.assign(profile, response)
+        })
+      } else if (response.status === 'not_authorized') {
+        // The person is logged into Facebook, but not this app
+        reject(response.status)
+      } else {
+        // The person is not logged into Facebook, so we're not sure if
+        // they are logged into this app or not.
+        reject(response.status)
+      }
+    }, {scope: 'public_profile,email'})
+  })
 }
 
 window.fbAsyncInit = function () {

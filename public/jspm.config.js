@@ -159,6 +159,7 @@ SystemJS.config({
         "react-dom": "npm:react-dom@15.1.0",
         "react-intl": "npm:react-intl@2.1.3",
         "react-router": "npm:react-router@2.4.1",
+        "socket.io-rpc-client": "github:capaj/socket.io-rpc-client@1.1.3",
         "stream": "github:jspm/nodelibs-stream@0.2.0-alpha",
         "string_decoder": "github:jspm/nodelibs-string_decoder@0.2.0-alpha",
         "systemjs-plugin-babel": "npm:systemjs-plugin-babel@0.0.12",
@@ -553,6 +554,23 @@ SystemJS.config({
         "npm:font-awesome@4.6.3": {
             "map": {
                 "css": "github:systemjs/plugin-css@0.1.23"
+            }
+        },
+        "github:capaj/socket.io-rpc-client@1.1.3": {
+            "map": {
+                "o.extend": "npm:o.extend@1.0.1",
+                "traverse": "npm:traverse@0.6.6",
+                "debug": "npm:debug@2.2.0",
+                "socket.io-rpc-event-handlers": "github:capaj/socket.io-rpc-event-handlers@1.1.7",
+                "socket.io-client": "github:socketio/socket.io-client@1.4.8"
+            }
+        },
+        "github:capaj/socket.io-rpc-event-handlers@1.1.7": {
+            "map": {
+                "debug": "npm:debug@2.2.0",
+                "traverse": "npm:traverse@0.6.6",
+                "serialize-error": "npm:serialize-error@1.1.0",
+                "co": "npm:co@4.6.0"
             }
         }
     }
