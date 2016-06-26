@@ -1,0 +1,13 @@
+.avatar-pic-text{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatar-pic-text img{
+  margin-left: 10px;
+}
+
+a{
+  overflow: hidden;
+}

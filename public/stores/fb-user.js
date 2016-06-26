@@ -1,11 +1,14 @@
 /* global FB */
 import {observable} from 'mobx'
-export const profile = observable({
+import _ from 'lodash'
+
+const defaultValues = {
   authResponse: null,
   id: null,
   picture: null,
   name: null
-})
+}
+export const profile = observable(_.clone(defaultValues))
 
 export const login = function () {
   return new Promise((resolve, reject) => {
@@ -26,6 +29,15 @@ export const login = function () {
         reject(response.status)
       }
     }, {scope: 'public_profile,email'})
+  })
+}
+
+export const logout = () => {
+  return new Promise((resolve, reject) => {
+    FB.logout(function(response) {
+      Object.assign(profile, defaultValues)
+      resolve(response)
+    })
   })
 }
 

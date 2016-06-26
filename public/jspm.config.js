@@ -126,7 +126,26 @@ SystemJS.config({
         }
     },
     map: {
-        "css": "github:systemjs/plugin-css@0.1.23"
+        "socket.io-rpc-client": "github:capaj/socket.io-rpc-client@1.1.3"
+    },
+    packages: {
+        "github:capaj/socket.io-rpc-client@1.1.3": {
+            "map": {
+                "o.extend": "npm:o.extend@1.0.1",
+                "traverse": "npm:traverse@0.6.6",
+                "debug": "npm:debug@2.2.0",
+                "socket.io-rpc-event-handlers": "github:capaj/socket.io-rpc-event-handlers@1.1.7",
+                "socket.io-client": "github:socketio/socket.io-client@1.4.8"
+            }
+        },
+        "github:capaj/socket.io-rpc-event-handlers@1.1.7": {
+            "map": {
+                "debug": "npm:debug@2.2.0",
+                "traverse": "npm:traverse@0.6.6",
+                "serialize-error": "npm:serialize-error@1.1.0",
+                "co": "npm:co@4.6.0"
+            }
+        }
     }
 });
 
@@ -137,6 +156,8 @@ SystemJS.config({
         "github:*/*.json"
     ],
     map: {
+        "lodash": "npm:lodash@4.13.1",
+        "css": "github:systemjs/plugin-css@0.1.23",
         "assert": "github:jspm/nodelibs-assert@0.2.0-alpha",
         "buffer": "github:jspm/nodelibs-buffer@0.2.0-alpha",
         "bulma": "npm:bulma@0.0.28",
@@ -152,14 +173,15 @@ SystemJS.config({
         "https": "github:jspm/nodelibs-https@0.2.0-alpha",
         "mobx": "npm:mobx@2.3.2",
         "mobx-react": "npm:mobx-react@3.3.1",
+        "moment": "npm:moment@2.13.0",
         "net": "github:jspm/nodelibs-net@0.2.0-alpha",
         "path": "github:jspm/nodelibs-path@0.2.0-alpha",
         "process": "github:jspm/nodelibs-process@0.2.0-alpha",
         "react": "npm:react@15.1.0",
+        "react-date-picker": "npm:react-date-picker@5.3.12",
         "react-dom": "npm:react-dom@15.1.0",
         "react-intl": "npm:react-intl@2.1.3",
         "react-router": "npm:react-router@2.4.1",
-        "socket.io-rpc-client": "github:capaj/socket.io-rpc-client@1.1.3",
         "stream": "github:jspm/nodelibs-stream@0.2.0-alpha",
         "string_decoder": "github:jspm/nodelibs-string_decoder@0.2.0-alpha",
         "systemjs-plugin-babel": "npm:systemjs-plugin-babel@0.0.12",
@@ -243,7 +265,7 @@ SystemJS.config({
         },
         "github:jspm/nodelibs-buffer@0.2.0-alpha": {
             "map": {
-                "buffer-browserify": "npm:buffer@4.6.0"
+                "buffer-browserify": "npm:buffer@4.7.0"
             }
         },
         "github:jspm/nodelibs-domain@0.2.0-alpha": {
@@ -280,13 +302,6 @@ SystemJS.config({
             "map": {
                 "pako": "npm:pako@0.2.8",
                 "readable-stream": "npm:readable-stream@2.1.4"
-            }
-        },
-        "npm:buffer@4.6.0": {
-            "map": {
-                "base64-js": "npm:base64-js@1.1.2",
-                "ieee754": "npm:ieee754@1.1.6",
-                "isarray": "npm:isarray@1.0.0"
             }
         },
         "npm:core-js@1.2.6": {
@@ -556,21 +571,55 @@ SystemJS.config({
                 "css": "github:systemjs/plugin-css@0.1.23"
             }
         },
-        "github:capaj/socket.io-rpc-client@1.1.3": {
+        "npm:react-date-picker@5.3.12": {
             "map": {
-                "o.extend": "npm:o.extend@1.0.1",
-                "traverse": "npm:traverse@0.6.6",
-                "debug": "npm:debug@2.2.0",
-                "socket.io-rpc-event-handlers": "github:capaj/socket.io-rpc-event-handlers@1.1.7",
-                "socket.io-client": "github:socketio/socket.io-client@1.4.8"
+                "react-style-normalizer": "npm:react-style-normalizer@1.2.8",
+                "react-inline-block": "npm:react-inline-block@2.1.0",
+                "react-field": "npm:react-field@1.3.0",
+                "raf": "npm:raf@3.2.0",
+                "react-class": "npm:react-class@2.1.0",
+                "react-notify-resize": "npm:react-notify-resize@1.0.3",
+                "lodash.throttle": "npm:lodash.throttle@4.0.1",
+                "react-flex": "npm:react-flex@2.2.2",
+                "object-assign": "npm:object-assign@4.1.0"
             }
         },
-        "github:capaj/socket.io-rpc-event-handlers@1.1.7": {
+        "npm:raf@3.2.0": {
             "map": {
-                "debug": "npm:debug@2.2.0",
-                "traverse": "npm:traverse@0.6.6",
-                "serialize-error": "npm:serialize-error@1.1.0",
-                "co": "npm:co@4.6.0"
+                "performance-now": "npm:performance-now@0.2.0"
+            }
+        },
+        "npm:react-notify-resize@1.0.3": {
+            "map": {
+                "react-class": "npm:react-class@2.1.0"
+            }
+        },
+        "npm:react-inline-block@2.1.0": {
+            "map": {
+                "object-assign": "npm:object-assign@4.1.0"
+            }
+        },
+        "npm:react-class@2.1.0": {
+            "map": {
+                "object-assign": "npm:object-assign@4.1.0"
+            }
+        },
+        "npm:react-flex@2.2.2": {
+            "map": {
+                "object-assign": "npm:object-assign@4.1.0",
+                "react-class": "npm:react-class@2.1.0"
+            }
+        },
+        "npm:lodash.throttle@4.0.1": {
+            "map": {
+                "lodash.debounce": "npm:lodash.debounce@4.0.6"
+            }
+        },
+        "npm:buffer@4.7.0": {
+            "map": {
+                "ieee754": "npm:ieee754@1.1.6",
+                "base64-js": "npm:base64-js@1.1.2",
+                "isarray": "npm:isarray@1.0.0"
             }
         }
     }

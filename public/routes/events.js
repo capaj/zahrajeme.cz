@@ -1,10 +1,10 @@
 import React from 'react'
-import Profile from '../components/profile-management'
+import {Link} from 'react-router'
 
-export default class Home extends React.Component {
+export default class Events extends React.Component {
   render () {
     return <div>
-      <Profile />
+      <Link to='/events/new' className="button is-success">Přidat událost</Link>
       <h2 className='title'>Mapa událostí</h2>
       <span className='icon'>
         <i className='fa fa-home'></i>

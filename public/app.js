@@ -1,23 +1,33 @@
 import 'capaj/systemjs-hot-reloader/default-listener'
-
+import './css/zahrajeme.css!'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Router, Route, browserHistory, IndexRoute } from 'react-router'
 
-import Home from './routes/home'
+import Events from './routes/events'
+import Users from './routes/users'
+import About from './routes/about'
+import NewEvent from './routes/new-event'
+import UserProfile from './routes/profile'
+import Locations from './routes/locations'
 import Layout from './components/layout'
 import { IntlProvider, addLocaleData } from 'react-intl'
 import en from 'react-intl/locale-data/en'
+import backend from './services/backend'
+
+window.backend = backend
 addLocaleData(en)
 
 const routes = <Route path='/' component={Layout}>
-  <IndexRoute component={Home} />
+  <IndexRoute component={Events} />
+  <Route path='about' component={About} />
+  <Route path='events' component={Events}>
+  </Route>
+  <Route path='events/new' component={NewEvent} />
+  <Route path='locations' component={Locations} />
+  <Route path='users' component={Users} />
+  <Route path='profile' component={UserProfile} />
 </Route>
-
-// <Route path='events' component={Events}/>
-// <Route path='about' component={About}/>
-// <Route path='places' component={Places}/>
-// <Route path='profile' component={UserProfile}/>
 
 class RenderForcer extends React.Component {
   componentWillMount () {
