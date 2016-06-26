@@ -22,6 +22,11 @@ export default (props) => {
         <Profile />
       </div>
     </nav>
-    {props.children}
+    <section className="section">
+      <div className="container">
+        {props.children}
+      </div>
+    </section>
+
   </div>
 }

@@ -2,7 +2,7 @@ import 'capaj/systemjs-hot-reloader/default-listener'
 import './css/zahrajeme.css!'
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Router, Route, browserHistory, IndexRoute } from 'react-router'
+import { Router, Route, hashHistory, IndexRoute } from 'react-router'
 
 import Events from './routes/events'
 import Users from './routes/users'
@@ -35,7 +35,7 @@ class RenderForcer extends React.Component {
   }
   render () {
     return <IntlProvider locale='en'>
-      <Router history={browserHistory}>
+      <Router history={hashHistory}>
         {routes}
       </Router>
     </IntlProvider>

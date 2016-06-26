@@ -11,3 +11,9 @@
 a{
   overflow: hidden;
 }
+
+#app > div > nav > div.nav-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

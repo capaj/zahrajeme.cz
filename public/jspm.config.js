@@ -156,6 +156,8 @@ SystemJS.config({
         "github:*/*.json"
     ],
     map: {
+        "react-promise": "npm:react-promise@1.1.1",
+        "history": "npm:history@3.0.0",
         "lodash": "npm:lodash@4.13.1",
         "css": "github:systemjs/plugin-css@0.1.23",
         "assert": "github:jspm/nodelibs-assert@0.2.0-alpha",
@@ -620,6 +622,19 @@ SystemJS.config({
                 "ieee754": "npm:ieee754@1.1.6",
                 "base64-js": "npm:base64-js@1.1.2",
                 "isarray": "npm:isarray@1.0.0"
+            }
+        },
+        "npm:history@3.0.0": {
+            "map": {
+                "query-string": "npm:query-string@4.2.2",
+                "warning": "npm:warning@2.1.0",
+                "invariant": "npm:invariant@2.2.1"
+            }
+        },
+        "npm:query-string@4.2.2": {
+            "map": {
+                "object-assign": "npm:object-assign@4.1.0",
+                "strict-uri-encode": "npm:strict-uri-encode@1.1.0"
             }
         }
     }
