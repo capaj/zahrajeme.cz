@@ -23,7 +23,7 @@ export default (props) => {
       </div>
     </nav>
     <section className="section">
-      <div className="container">
+      <div className="container content">
         {props.children}
       </div>
     </section>

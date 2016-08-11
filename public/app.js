@@ -10,6 +10,7 @@ import About from './routes/about'
 import NewEvent from './routes/new-event'
 import UserProfile from './routes/profile'
 import Locations from './routes/locations'
+import NewLocation from './routes/new-location'
 import Layout from './components/layout'
 import { IntlProvider, addLocaleData } from 'react-intl'
 import en from 'react-intl/locale-data/en'
@@ -25,6 +26,7 @@ const routes = <Route path='/' component={Layout}>
   </Route>
   <Route path='events/new' component={NewEvent} />
   <Route path='locations' component={Locations} />
+  <Route path='locations/new' component={NewLocation} />
   <Route path='users' component={Users} />
   <Route path='profile' component={UserProfile} />
 </Route>
